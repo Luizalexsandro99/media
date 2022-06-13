@@ -1,0 +1,144 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+/*
+ #14FCFF azul
+#09E365 verde escuro
+#38FA02 verde claro
+#D9E309 amarelo
+ */
+
+body{
+    background-image: linear-gradient(to right,  #0ebfc2 ,  #058688);
+}
+
+@keyframes cores {
+    to{color:#f79413 ;}
+    from{color: #D9E309;}
+}
+
+@media (max-width:416px){
+    h1{
+        text-align: center;
+        margin-top: 115px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: 3rem;
+        color: white;
+        animation-name: cores;
+        animation-duration: 1.5s;
+        animation-fill-mode: forwards;
+        animation-direction: alternate;
+        animation-iteration-count: infinite;
+    }
+
+    #qtd{
+        margin-top: 45%;
+        background-color: rgb(125, 125, 207);
+        margin-left: 15px;
+        margin-right: 15px;
+        padding: 20px;
+        border-radius: 10px;
+
+    }
+
+    #paraQtd{
+        color: white;
+        font-size: 22px;
+        text-align: center;
+        margin-bottom: 15px;
+    }
+
+    #inputQtd{ /*Input de quantidade de notas */
+        display: block;
+        margin: auto;
+        border: none;
+        padding: 15px;
+        border-radius: 10px;
+        width: 100%;
+    }
+
+    #buttonQtd{ /* Butão de enviar a qtd de notas  */
+        border: none;
+        padding: 5px;
+        border-radius: 5px;
+        display: block;
+        margin: auto;
+        margin-top: 10px;
+        width: 100%;
+    }
+
+    #buttonQtd:hover{
+        cursor: pointer;
+        background-color: rgb(80, 80, 221);
+        color: white;
+    }
+
+    #notas{
+        background-color: rgb(125, 125, 207);
+        padding: 12px;
+        margin-left: 10px;
+        margin-right: 10px;
+        border-radius: 10px;
+        margin-top: 20%;
+        padding-top: 50px;
+        display: none;
+    }
+
+    .notasAluno{
+        display: block;
+        margin-bottom: 35px;
+        width: 100%;
+        text-align: center;
+        padding: 10px;
+        border-radius: 10px;
+    }
+
+    #suasNotas{
+        font-size: 2rem;
+        position: absolute;
+        margin-top: -55px;
+        margin-left: 100px;
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: #38FA02 ;
+        font-weight: 2px 3px 3px black;
+        font-weight: bolder;
+    }
+    
+    #nota1{
+        display: none;
+    }
+
+    #nota2{
+        display: none;
+
+    }
+
+    #nota3{
+        display: none;
+
+    }
+
+    #nota4{
+        display: none;
+
+    }
+
+    #btnCalc{
+        border: none;
+        width: 100%;
+        background-color: #38d7da;
+        padding: 5px;
+        border-radius: 10px;
+        font-family: monospace;
+    }
+
+    #resultado {
+        font-size: 2rem;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        text-align: center;
+        margin-top: 5%;
+    }
+}

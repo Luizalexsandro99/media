@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Média</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="bloco">
+        <h1>Será que passou?</h1>
+
+        <div id="qtd">
+            <p id="paraQtd">Por favor, nos informe quantas provas ou atividades você teve</p>
+            <input type="number" placeholder="N° de notas" id="inputQtd">
+            <input type="button" value="enviar" id="buttonQtd" onclick="guardar()">
+        </div>
+
+        <div id="notas">
+            <p id="suasNotas">Suas notas</p>
+            <input type="number" id="nota1" class="notasAluno" placeholder="nota 1">
+            <input type="number" id="nota2" class="notasAluno" placeholder="nota 2">
+            <input type="number" id="nota3" class="notasAluno" placeholder="nota 3">
+            <input type="number" id="nota4" class="notasAluno" placeholder="nota 4">
+            <input type="button" id="btnCalc" value="Calcular" onclick="calcular()">
+            <p id="resultado"></p>
+        </div>
+
+        
+    </div>
+
+
+    <script>
+        function guardar(){
+            let tn1 = document.getElementById('inputQtd')
+            let n1 = Number(tn1.value)
+            let but = document.getElementById('qtd')
+            but.style.display = 'none'
+
+            let divPrincipal = document.getElementById('notas')    
+            divPrincipal.style.display = ' block ' 
+            
+            let nota1 = document.getElementById('nota1')
+            let nota2 = document.getElementById('nota2')
+            let nota3 = document.getElementById('nota3')
+            let nota4 = document.getElementById('nota4')
+
+            if(n1 == 1){
+                nota1.style.display = 'block'
+            }else if(n1 == 2){
+                nota1.style.display = 'block'
+                nota2.style.display = 'block'
+            }else if(n1 == 3){
+                nota1.style.display = 'block'
+                nota2.style.display = 'block'
+                nota3.style.display = 'block'
+            }else if(n1 == 4){
+                nota1.style.display = 'block'
+                nota2.style.display = 'block'
+                nota3.style.display = 'block'
+                nota4.style.display = 'block'
+            }else{
+                alert("Você digitou a quantidade de notas errado, só aceitamos até 4 notas")
+            }
+
+        }
+
+        function calcular(){
+
+            let input = document.getElementById('inputQtd')
+            let abc = Number(input.value)
+
+            let n1 = document.getElementById('nota1')
+            let tn1 = Number(n1.value)
+
+            let n2 = document.getElementById('nota2')
+            let tn2 = Number(n2.value)
+
+            let n3 = document.getElementById('nota3')
+            let tn3 = Number(n3.value)
+
+            let n4 = document.getElementById('nota4')
+            let tn4 = Number(n4.value)
+
+            res = document.getElementById('resultado')
+
+            var apr = ''
+
+            if(abc == 2){
+                s = (tn1 + tn2) / 2
+            }else if(abc == 3){
+                s = (tn1 + tn2 + tn3) / 3
+            }else if(abc == 4){
+                s = (tn1 + tn2 + tn3 + tn4) / 4
+            }
+
+            if(s >= 7){
+                apr = 'Aprovado'
+            }else{
+                apr = 'Reprovado'
+            }
+            
+            res.innerHTML = `<p> A média é: ${s} você foi ${apr}</p>`
+        }
+
+
+
+    </script>
+
+</body>
+</html>
